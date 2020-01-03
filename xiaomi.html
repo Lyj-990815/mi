@@ -1,0 +1,1131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://at.alicdn.com/t/font_1578761_lvk8d3kt16.css">
+    <link rel="stylesheet" type="text/css" href="css/xiaomi.css">
+    <meta name="keywords" content="手机，家电，电脑"/>
+</head>
+<body>
+<!-- 头部开始 -->
+<div class="head">
+    <div class="head-content">
+        <div class="head-content-left">
+            <a href="#">小米商城</a>
+            <span>|</span>
+            <a href="#">MIUI</a>
+            <span>|</span>
+            <a href="#">loT</a>
+            <span>|</span>
+            <a href="#">云服务</a>
+            <span>|</span>
+            <a href="#">金融</a>
+            <span>|</span>
+            <a href="#">有品</a>
+            <span>|</span>
+            <a href="#">小爱开放平台</a>
+            <span>|</span>
+            <a href="#">企业团购</a>
+            <span>|</span>
+            <a href="#">直播</a>
+            <span>|</span>
+            <a href="#">资质证照</a>
+            <span>|</span>
+            <a href="#">协议规则</a>
+            <span>|</span>
+            <a href="#">下载app</a>
+            <span>|</span>
+            <a href="#">Select Location</a>
+        </div>
+        <div class="head-content-right">
+            <a href="#">登录</a>
+            <span>|</span>
+            <a href="#">注册</a>
+            <span>|</span>
+            <a href="#">消息通知</a>
+            <a href="#">
+                <div class="gouwuche">
+                <a href="#"><i class="iconfont icon-gouwuchekong"> 购物车（0）</i></a>
+                <div class="gouwuche-xiala"><span>购物车中还没有商品，赶紧选购吧</span></div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+<!-- 头部结束 -->
+<!-- 导航栏开始 -->
+<div class="navigation">
+    <div class="navigation-content">
+        <div class="logo-mi">
+            <img src="images/logo.jpg" alt="">
+        </div>
+        <div class="navigation-zi">
+            <a href="#">小米手机</a>
+            <a href="#">Redmi 红米</a>
+            <a href="#">电视</a>
+            <a href="#">笔记本</a>
+            <a href="#">家电</a>
+            <a href="#">路由器</a>
+            <a href="#">智能硬件</a>
+            <a href="#">服务</a>
+            <a href="#">社区</a>
+        </div>
+        <div class="navigation-sousuo">
+            <i class="iconfont icon-sousou"></i>
+        </div>
+        <div class="navigation-sousoukuang">
+            <form action="">
+                <input type="text">
+                <div class="navigation-sousoukuang-zi1">小米9 Pro 5G</div>
+                <div class="navigation-sousoukuang-zi2">Redmi Note 8</div>
+            </form>
+        </div>
+
+    </div>
+</div>
+<!-- 导航栏结束 -->
+<!-- 轮播图开始 -->
+<div class="banner">
+    <div class="banner-content">
+        <img src="images/banner-1.jpg" alt="">
+        <img src="images/banner-2.jpg" alt="">
+        <img src="images/banner-3.jpg" alt="">
+        <img src="images/banner-4.jpg" alt="">
+        <img src="images/banner-5.jpg" alt="">
+        <div class="banner-left-tou"></div>
+        <div class="banner-right-tou"></div>
+        <div class="banner-dian">
+            <div class="banner-dian-1"></div>
+            <div class="banner-dian-2"></div>
+            <div class="banner-dian-3"></div>
+            <div class="banner-dian-4"></div>
+            <div class="banner-dian-5"></div>
+        </div>
+        <ul>
+            <li><a href="#">手机 电话卡</a>
+                <i class="iconfont icon-you"></i>
+            </li>
+            <li><a href="#">电视 盒子</a>
+                <i class="iconfont icon-you"></i>
+            </li>
+            <li><a href="#">笔记本 显示器 平板</a>
+                <i class="iconfont icon-you"></i>
+            </li>
+            <li><a href="#">手机 电话卡</a>
+                <i class="iconfont icon-you"></i>
+            </li>
+            <li><a href="#">出行 穿戴</a>
+                <i class="iconfont icon-you"></i>
+            </li>
+            <li><a href="#">智能 路由器</a>
+                <i class="iconfont icon-you"></i>
+            </li>
+            <li><a href="#">电源 配件</a>
+                <i class="iconfont icon-you"></i>
+            </li>
+            <li><a href="#">健康 儿童</a>
+                <i class="iconfont icon-you"></i>
+            </li>
+            <li><a href="#">耳机 音箱</a>
+                <i class="iconfont icon-you"></i>
+            </li>
+            <li><a href="#">生活 箱包</a>
+                <i class="iconfont icon-you"></i>
+            </li>
+        </ul>
+    </div>
+</div>
+<script>
+    /*
+* 思路分析：
+* 1、获取所有图片列表--类数组
+* 2、默认下标0，每隔2s让下标下标+1，然后让改下标对应的图片显示，其他图片全部消失
+* 3、如果当前是最后一张那么下一张图片应该显示第一张图片
+* 4、修改过渡动画，让相对的原点显示选中样式
+* 5、鼠标移入后停止动画,鼠标移出后动画继续执行
+* 6、对函数动画进行封装，方便多次使用
+* 7、点击右箭头切换图片，点击左箭头切换图片
+* 8、点击小圆点切换图片，给每一个小圆点添加点击事件，给当前小圆点添加选中样式，其他小圆点取消选中，让当前原点对应的图片显示，其他图片全部消失
+* */
+    //    获取所有图片列表
+    let ban=document.querySelectorAll(".banner-content img");
+    let box=document.querySelector(".banner-content");
+    let time=setInterval(play,2000);
+    let index=0;
+    function  play() {
+        //让其他图片消失
+        for (let i = 0; i < ban.length; i++) {
+            ban[i].style.opacity = "0";
+        }
+        index++;
+        //临界值判断
+        if (index === 5) {
+            index = 0;
+        }
+        //    下标对应图片显示
+        ban[index].style.opacity = "1";
+    }
+</script>
+
+<!-- 轮播图结束 -->
+<!-- 轮播图下面开始 -->
+<div class="banner-xia">
+    <div class="banner-xia-content">
+        <div class="banner-xia-tu1">
+            <div class="banner-xia-xian"></div>
+            <div class="banner-xia-xian1"></div>
+            <div class="banner-xia-xian2"></div>
+            <div class="banner-xia-xian3"></div>
+            <div class="banner-xia-xian4"></div>
+            <div class="banner-xia-xian5"></div>
+            <div class="banner-xia-xian6"></div>
+            <div class="banner-xia-xian7"></div>
+            <div class="banner-xia-xian8"></div>
+            <a href="#">
+                <div class="miaosha">
+                    <div class="miaosha-limian">
+                        <i class="iconfont icon-history"></i>
+                        <div class="miaosha-limian-zi">小米秒杀</div>
+                    </div>
+                </div>
+            </a>
+            <a href="#">
+                <div class="miaosha">
+                    <div class="miaosha-limian">
+                        <i class="iconfont icon--gaolou"></i>
+                        <div class="miaosha-limian-zi">企业团购</div>
+                    </div>
+                </div>
+            </a>
+            <a href="#">
+                <div class="miaosha">
+                    <div class="miaosha-limian">
+                        <i class="iconfont icon-Fnum"></i>
+                        <div class="miaosha-limian-zi">F码通道</div>
+                    </div>
+                </div>
+            </a>
+            <a href="#">
+                <div class="miaosha">
+                    <div class="miaosha-limian">
+                        <i class="iconfont icon-mifenka"></i>
+                        <div class="miaosha-limian-zi">米粉卡</div>
+                    </div>
+                </div>
+            </a>
+            <a href="#">
+                <div class="miaosha">
+                    <div class="miaosha-limian">
+                        <i class="iconfont icon-NewToOld"></i>
+                        <div class="miaosha-limian-zi">以旧换新</div>
+                    </div>
+                </div>
+            </a>
+            <a href="#">
+                <div class="miaosha">
+                    <div class="miaosha-limian">
+                        <i class="iconfont icon-huafeichongzhi"></i>
+                        <div class="miaosha-limian-zi">话费充值</div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <a href="#" class="banner-xia-tu2">
+            <img src="images/banner-xia-tu2.jpg" alt="">
+        </a>
+        <a href="#" class="banner-xia-tu3">
+            <img src="images/banner-xia-tu3.jpg" alt="">
+        </a>
+        <a href="#" class="banner-xia-tu4">
+            <img src="images/banner-xia-tu4.jpg" alt="">
+        </a>
+    </div>
+</div>
+<!-- 轮播图下面结束 -->
+<!-- 小米闪购开始 -->
+<div class="purchase">
+    <div class="purchase-content">
+        <span>小米闪购</span>
+        <a href="">
+            <div class="purchase-content-box">
+                <i class="iconfont icon-you1"></i>
+            </div>
+        </a>
+        <a href="">
+            <div class="purchase-content-box1">
+                <i class="iconfont icon-zuo"></i>
+            </div>
+        </a>
+    </div>
+</div>
+<div class="chase">
+    <div class="chase-content">
+        <div class="chase-content-box1">
+            <span>14:00 场</span>
+            <div>
+                <img src="images/untitled.png" alt="">
+            </div>
+            <div class="chase-content-box6">
+                距离结束还有
+            </div>
+            <div class="chase-content-box7">00</div>
+            <div class="chase-content-box8">:</div>
+            <div class="chase-content-box9">00</div>
+            <div class="chase-content-box10">:</div>
+            <div class="chase-content-box11">00</div>
+        </div>
+        <div class="chase-content-box2">
+            <div>
+                <img src="images/purchase-1.jpg" alt="">
+            </div>
+            <div class="chase-box2-zi1">贝医生儿童牙刷 粉色</div>
+            <div class="chase-box2-zi2">专业呵护宝宝只能牙齿</div>
+            <div class="chase-box2-box">
+                <span>1元</span>
+                <del>19.9元</del>
+            </div>
+        </div>
+        <div class="chase-content-box3">
+            <div>
+                <img src="images/purchase-2.png" alt="">
+            </div>
+            <div class="chase-box3-zi1">Free Tie真皮板鞋 米家定制...</div>
+            <div class="chase-box3-zi2">做一双简单的板鞋</div>
+            <div class="chase-box3-box">
+                <span>99元</span>
+                <del>199元</del>
+            </div>
+        </div>
+        <div class="chase-content-box4">
+            <div>
+                <img src="images/purchase-3.jpg" alt="">
+            </div>
+            <div class="chase-box4-zi1">小米米家智能摄像机 白色</div>
+            <div class="chase-box4-zi2">智能侦测 安全守护</div>
+            <div class="chase-box4-box">
+                <span>99元</span>
+                <del>129元</del>
+            </div>
+        </div>
+        <div class="chase-content-box5">
+            <div>
+                <img src="images/purchase-4.jpg" alt="">
+            </div>
+            <div class="chase-box5-zi1">MIJOY 抽纸青春版 24包/箱</div>
+            <div class="chase-box5-zi2">精选原生竹浆，环保健康</div>
+            <div class="chase-box5-box">
+                <span>27.9元</span>
+                <del>32.9元</del>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 小米闪购结束 -->
+<!-- 小米闪购下面开始 -->
+<div class="purchase-zhong"></div>
+<div class="purchase-xia">
+    <div class="purchase-xia-content">
+        <img src="images/purchase-xia.jpg" alt="">
+    </div>
+</div>
+<!--小米闪购下面结束 -->
+<div class="phone-zhong"></div>
+<!-- 手机开始 -->
+<div class="phone">
+    <div class="phone-content">
+        <div class="phone-content-zi">手机</div>
+        <div class="phone-content-yiru">
+            <span>查看全部</span>
+            <i class="iconfont icon-right"></i>
+        </div>
+    </div>
+</div>
+<div class="phone1">
+    <div class="phone1-content">
+        <div class="phone1-content-left">
+            <img src="images/phone.jpg" alt="">
+        </div>
+        <div class="phone1-right-box1">
+            <div class="phone1-right-tu1">
+                <img src="images/phone-1.jpg" alt="">
+            </div>
+            <div class="phone1-tu1-zi1">Redmi K30</div>
+            <div class="phone1-tu1-zi2">120Hz流速屏，全速热爱</div>
+            <span>1599元起</span>
+        </div>
+        <div class="phone1-right-box2">
+            <div class="phone1-right-tu2">
+                <img src="images/phone-2.jpg" alt="">
+            </div>
+            <div class="phone1-tu2-zi1">Redmi K30 5G</div>
+            <div class="phone1-tu2-zi2">双模5G，120Hz流速屏</div>
+            <span>1999元起</span>
+        </div>
+        <div class="phone1-right-box3">
+            <div class="phone1-right-tu3">
+                <img src="images/phone-3.jpg" alt="">
+            </div>
+            <div class="phone1-tu3-zi1">小米CC9 Pro</div>
+            <div class="phone1-tu3-zi2">1亿像素 五摄四闪</div>
+            <span>2799元起</span>
+        </div>
+        <div class="phone1-right-box4">
+            <div class="phone1-right-tu4">
+                <img src="images/phone-4.jpg" alt="">
+            </div>
+            <div class="phone1-tu4-zi1">小米9 Pro 5G</div>
+            <div class="phone1-tu4-zi2">5G双卡全网通，骁龙855Plus</div>
+            <span>3699元起</span>
+        </div>
+        <div class="phone1-right-box5">
+            <div class="phone1-right-tu5">
+                <img src="images/phone-5.jpg" alt="">
+            </div>
+            <div class="phone1-tu5-zi1">Redmi 8</div>
+            <div class="phone1-tu5-zi2">5000mAh超长续航</div>
+            <span>699元起</span>
+            <del>799元</del>
+        </div>
+        <div class="phone1-right-box6">
+            <div class="phone1-right-tu6">
+                <img src="images/phone-6.jpg" alt="">
+            </div>
+            <div class="phone1-tu6-zi1">Redmi 8A</div>
+            <div class="phone1-tu6-zi2">5000mAh超长续航</div>
+            <span>699元起</span>
+        </div>
+        <div class="phone1-right-box7">
+            <div class="phone1-right-tu7">
+                <img src="images/phone-7.jpg" alt="">
+            </div>
+            <div class="phone1-tu7-zi1">Redmi Note 8 Pro</div>
+            <div class="phone1-tu7-zi2">6400万全场景四摄</div>
+            <span>1199元起</span>
+            <del>799元</del>
+        </div>
+        <div class="phone1-right-box8">
+            <div class="phone1-right-tu8">
+                <img src="images/phone-8.jpg" alt="">
+            </div>
+            <div class="phone1-tu8-zi1">Redmi Note 8</div>
+            <div class="phone1-tu8-zi2">千元4800万四摄</div>
+            <span>999元起</span>
+        </div>
+    </div>
+
+</div>
+<!-- 手机结束 -->
+<!-- 手机下面开始 -->
+<div class="phone-xia-box2"></div>
+<div class="phone-xia">
+    <div class="phone-xia-box">
+        <img src="images/phone-xia.jpg" alt="">
+    </div>
+</div>
+<!--手机下面结束-->
+<div class="phone-xia-box1"></div>
+<!-- 家电开始 -->
+<div class="household">
+    <div class="household-content">
+        <div class="household-box-zi2">电视影音</div>
+        <div class="household-box-zi1">热门</div>
+        <div class="household-box-zi3">家电</div>
+    </div>
+</div>
+<div class="household-xia">
+    <div class="household-xia-content">
+        <div class="household-xia-tu1">
+            <img src="images/household-1.jpg" alt="">
+        </div>
+        <div class="household-xia-tu2">
+            <img src="images/household-2.jpg" alt="">
+            <div class="household-tu2-zi1">米家互联网空调C1(一级能效)</div>
+            <div class="household-tu2-zi2">变频节能省电，自清洁</div>
+            <span>2599元</span>
+            <del>2799元</del>
+        </div>
+        <div class="household-xia-tu3">
+            <img src="images/household-3.jpg" alt="">
+            <div class="household-tu3-zi1">米家空调</div>
+            <div class="household-tu3-zi2">出众静音，快速制冷热</div>
+            <span>1699元</span>
+            <del>1799元</del>
+        </div>
+        <div class="household-xia-tu4">
+            <img src="images/household-4.jpg" alt="">
+            <div class="household-tu4-zi1">米家互联网洗烘一体机 Pro 10kg</div>
+            <div class="household-tu4-zi2">智能洗烘，省心省力</div>
+            <span>2999元</span>
+        </div>
+        <div class="household-xia-tu5">
+            <img src="images/household-5.jpg" alt="">
+            <div class="household-tu5-zi1">小米电视4A 32英寸</div>
+            <div class="household-tu5-zi2">人工智能系统，高清液晶屏</div>
+            <span>699元</span>
+            <del>799元</del>
+        </div>
+        <div class="household-xia-tu6">
+            <img src="images/household-6.jpg" alt="">
+        </div>
+        <div class="household-xia-tu7">
+            <img src="images/household-7.jpg" alt="">
+            <div class="household-tu7-zi1">Redmi全自动波轮洗衣机1A 8kg</div>
+            <div class="household-tu7-zi2">一键操作，父母都爱用</div>
+            <span>749元</span>
+            <del>799元</del>
+        </div>
+        <div class="household-xia-tu8">
+            <img src="images/ehousehold-8.jpg" alt="">
+            <div class="household-tu8-zi1">小米全面屏电视E55A</div>
+            <div class="household-tu8-zi2">全面屏设计，人工智能语音</div>
+            <span>1799元</span>
+            <del>2099元</del>
+        </div>
+        <div class="household-xia-tu9">
+            <img src="images/household-9.jpg" alt="">
+            <div class="household-tu9-zi1">15.6" 四核i7 16G独显 512G</div>
+            <div class="household-tu9-zi2">全国均衡的国民轻薄本</div>
+            <span>4699元</span>
+            <del>4899元</del>
+        </div>
+        <div class="household-xia-box">
+            <div class="household-xia-tu10">
+                <img src="images/household-10.jpg" alt="">
+                <div class="household-tu10-zi1">Air 13.3"2019</div>
+                <div class="household-tu10-zi2">款</div>
+                <div class="household-tu10-zi3">4399元起</div>
+            </div>
+            <div class="household-xia-tu11">
+                <div class="household-tu11-box">
+                    <i class="iconfont icon-icon-right"></i>
+                </div>
+                <div class="household-tu11-zi1">浏览更多</div>
+                <div class="household-tu11-zi2">热门</div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 家电结束 -->
+<div class="household-xia-box1"></div>
+<!-- 家电下面图开始 -->
+<div class="household-tu-xia">
+    <div>
+        <img src="images/household-zhong.jpg" alt="">
+    </div>
+</div>
+<!-- 家电下面图结束 -->
+<div class="box"></div>
+<!-- 智能开始 -->
+<div class="head-Intelligence">
+    <div class="head-Intelligence-content">
+        <div class="head-Intelligence-zi1">出行</div>
+        <div class="head-Intelligence-zi2">安防</div>
+        <div class="head-Intelligence-zi3">热门</div>
+        <div class="head-Intelligence-zi">智能</div>
+    </div>
+</div>
+<div class="Intelligence-xia">
+    <div class="Intelligence-xia-content">
+        <div class="Intelligence-xia-tu1">
+            <img src="images/Intelligence-1.jpg" alt="">
+        </div>
+        <div class="Intelligence-xia-tu2">
+            <img src="images/Intelligence-2.jpg" alt="">
+            <div class="Intelligence-tu2-zi1">小米[小爱老师]</div>
+            <div class="Intelligence-tu2-zi2">口袋离得英语外教</div>
+            <span>499元</span>
+        </div>
+        <div class="Intelligence-xia-tu3">
+            <img src="images/Intelligence-3.jpg" alt="">
+            <div class="Intelligence-tu3-zi1">小米米家智能门锁 推拉式</div>
+            <div class="Intelligence-tu3-zi2">一步推拉，高端智能门锁</div>
+            <span>1699元</span>
+        </div>
+        <div class="Intelligence-xia-tu4">
+            <img src="images/Intelligence-4.jpg" alt="">
+            <div class="Intelligence-tu4-zi1">小米小爱音箱 Play</div>
+            <div class="Intelligence-tu4-zi2">听音乐、语音遥控家电</div>
+            <span>99元</span>
+            <del>169元</del>
+        </div>
+        <div class="Intelligence-xia-tu5">
+            <img src="images/Intelligence-5.jpg" alt="">
+            <div class="Intelligence-tu5-zi1">小爱音箱万能遥控版</div>
+            <div class="Intelligence-tu5-zi2">传统家电秒变智能</div>
+            <span>149元</span>
+            <del>199元</del>
+        </div>
+        <div class="Intelligence-xia-tu6">
+            <img src="images/Intelligence-6.jpg" alt="">
+        </div>
+        <div class="Intelligence-xia-tu7">
+            <img src="images/Intelligence-7.jpg" alt="">
+            <div class="Intelligence-tu7-zi1">米家电饭煲4L</div>
+            <div class="Intelligence-tu7-zi2">890W 立体加热</div>
+            <span>299元</span>
+        </div>
+        <div class="Intelligence-xia-tu8">
+            <img src="images/Intelligence-8.jpg" alt="">
+            <div class="Intelligence-tu8-zi1">小米手环</div>
+            <div class="Intelligence-tu8-zi2">大屏彩显，20天超长续航</div>
+            <span>169元</span>
+        </div>
+        <div class="Intelligence-xia-tu9">
+            <img src="images/Intelligence-9.jpg" alt="">
+            <div class="Intelligence-tu9-zi1">米家九号平衡轮</div>
+            <div class="Intelligence-tu9-zi2">能花式酷玩的"风火轮"</div>
+            <span>799元</span>
+            <del>999元</del>
+        </div>
+        <div class="Intelligence-xia-box">
+            <div class="household-xia-tu10">
+                <img src="images/Intelligence-10.jpg" alt="">
+                <div class="Intelligence-tu10-zi1">小米体脂秤2</div>
+                <div class="Intelligence-tu10-zi3">99元</div>
+            </div>
+            <div class="Intelligence-xia-tu11">
+                <div class="Intelligence-tu11-box">
+                    <i class="iconfont icon-icon-right"></i>
+                </div>
+                <div class="Intelligence-tu11-zi1">浏览更多</div>
+                <div class="Intelligence-tu11-zi2">热门</div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 智能结束 -->
+<!-- 智能下空开始 -->
+<div class="body-Intelligence-xia"></div>
+<!-- 智能下空结束 -->
+<!-- 智能下面图片开始 -->
+<div class="img-Intelligence-xia">
+    <div class="img-Intelligence-box">
+        <img src="images/Intelligence-xia-kong.jpg" alt="">
+    </div>
+</div>
+<!-- 智能下面图片结束 -->
+<div class="box"></div>
+<!-- 头部搭配开始 -->
+<div class="head-parts">
+    <div class="head-parts-content">
+        <div class="parts-box-zi2">耳机音箱</div>
+        <div class="parts-box-zi1">热门</div>
+        <div class="parts-box-zi3">搭配</div>
+    </div>
+</div>
+<!-- 头部搭配结束 -->
+<!-- 搭配开始 -->
+<div class="parts-xia">
+    <div class="parts-xia-content">
+        <div class="parts-xia-tu1">
+            <img src="images/parts-1.jpg" alt="">
+        </div>
+        <div class="parts-xia-tu2">
+            <img src="images/parts-2.jpg" alt="">
+            <div class="parts-tu2-zi1">小米真无线蓝牙耳机 Air 2</div>
+            <div class="parts-tu2-zi2">智能真无线，轻松舒适戴</div>
+            <span>369元</span>
+            <del>399元</del>
+        </div>
+        <div class="parts-xia-tu3">
+            <img src="images/parts-3.jpg" alt="">
+            <div class="parts-tu3-zi1">高速无线充套装</div>
+            <div class="parts-tu3-zi2">快速无线闪充，Qi充电标准</div>
+            <span>129元</span>
+            <del>149元</del>
+        </div>
+        <div class="parts-xia-tu4">
+            <img src="images/parts-4.jpg" alt="">
+            <div class="parts-tu4-zi1">Redmi充电宝 10000mAh 标准版...</div>
+            <div class="parts-tu4-zi2">10000mAh大电量</div>
+            <span>59元</span>
+        </div>
+        <div class="parts-xia-tu5">
+            <img src="images/parts-5.jpg" alt="">
+            <div class="parts-tu5-zi1">Redmi充电宝 20000mAh 快充版</div>
+            <div class="parts-tu5-zi2">大容量，可上飞机</div>
+            <span>99元</span>
+        </div>
+        <div class="parts-xia-tu6">
+            <img src="images/parts-6.jpg" alt="">
+        </div>
+        <div class="parts-xia-tu7">
+            <img src="images/parts-7.jpg" alt="">
+            <div class="parts-tu7-zi1">小米插线板 5孔位</div>
+            <div class="parts-tu7-zi2">多重安全保护</div>
+            <span>39元</span>
+        </div>
+        <div class="parts-xia-tu8">
+            <img src="images/parts-8.jpg" alt="">
+            <div class="parts-tu8-zi1">小米蓝牙耳机AirDots青春版</div>
+            <div class="parts-tu8-zi2">雅致简约，收纳充电盒</div>
+            <span>199元</span>
+        </div>
+        <div class="parts-xia-tu9">
+            <img src="images/parts-9.jpg" alt="">
+            <div class="parts-tu9-zi1">小米小爱蓝牙音箱 随身版</div>
+            <div class="parts-tu9-zi2">小巧便携，一键唤醒小爱</div>
+            <span>49元</span>
+        </div>
+        <div class="parts-xia-box">
+            <div class="household-xia-tu10">
+                <img src="images/parts-10.jpg" alt="">
+                <div class="parts-tu10-zi1">小米小爱触屏</div>
+                <div class="household-tu10-zi2">音箱</div>
+                <div class="parts-tu10-zi3">199元起</div>
+            </div>
+            <div class="parts-xia-tu11">
+                <div class="parts-tu11-box">
+                    <i class="iconfont icon-icon-right"></i>
+                </div>
+                <div class="parts-tu11-zi1">浏览更多</div>
+                <div class="parts-tu11-zi2">热门</div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 搭配结束 -->
+<!-- 搭配下空开始 -->
+<div class="body-Intelligence-xia"></div>
+<!-- 搭配下空结束 -->
+<!-- 搭配下面图开始 -->
+<div class="img-Intelligence-xia">
+    <div class="img-Intelligence-box">
+        <img src="images/parst-xia-kong.jpg" alt="">
+    </div>
+</div>
+<!-- 搭配下面图结束 -->
+<div class="box"></div>
+<!-- 配件头部开始 -->
+<div class="head-collocation">
+    <div class="head-collocation-content">
+        <div class="collocation-box-zi2">充电器</div>
+        <div class="collocation-box-zi2">保护套</div>
+        <div class="collocation-box-zi1">热门</div>
+        <div class="collocation-box-zi3">配件</div>
+    </div>
+</div>
+<!-- 配件头部结束 -->
+<!-- 配件开始 -->
+<div class="collocation-xia">
+    <div class="collocation-xia-content">
+        <div class="collocation-xia-tu1">
+            <img src="images/collocation-1.jpg" alt="">
+        </div>
+        <div class="collocation-xia-tu2">
+            <img src="images/collocation-2.jpg" alt="">
+            <div class="collocation-tu2-zi1">小米USB充电器30W快充版（1...</div>
+            <div class="collocation-tu2-zi2">多一种接口，多一种选择</div>
+            <span>54元</span>
+            <del>59元</del>
+        </div>
+        <div class="collocation-xia-tu3">
+            <img src="images/collocation-3.jpg" alt="">
+            <div class="collocation-tu3-zi1">小米USB-C数据线 编织线版</div>
+            <div class="collocation-tu3-zi2">高强度纤维制线体</div>
+            <span>18.9元起</span>
+        </div>
+        <div class="collocation-xia-tu4">
+            <img src="images/collocation-4.jpg" alt="">
+            <div class="collocation-tu4-zi1">ZMI USB Type-C 转 Lightning...</div>
+            <div class="collocation-tu4-zi2">MFi官方认证，3A大流量，12个月质保</div>
+            <span>54元</span>
+            <del>59元</del>
+        </div>
+        <div class="collocation-xia-tu5">
+            <img src="images/collocation-5.jpg" alt="">
+            <div class="collocation-tu5-zi1">告诉无线充套装</div>
+            <div class="collocation-tu5-zi2">快速无线闪充，Qi充电标准</div>
+            <span>129元</span>
+            <del>149元</del>
+        </div>
+        <div class="collocation-xia-tu6">
+            <img src="images/collocation-6.jpg" alt="">
+        </div>
+        <div class="collocation-xia-tu7">
+            <img src="images/collocation-7.jpg" alt="">
+            <div class="collocation-tu7-zi1">小米无线充电宝青春版10000mAh</div>
+            <div class="collocation-tu7-zi2">能量满满，无线有线都能充</div>
+            <span>129元</span>
+        </div>
+        <div class="collocation-xia-tu8">
+            <img src="images/collocation-8.jpg" alt="">
+            <div class="collocation-tu8-zi1">米家LED随身灯</div>
+            <div class="collocation-tu8-zi2">小巧轻便 5级亮度调节</div>
+            <span>14.9元起</span>
+            <del>19.9元</del>
+        </div>
+        <div class="collocation-xia-tu9">
+            <img src="images/collocation-9.jpg" alt="">
+            <div class="collocation-tu9-zi1">小米9 Pro 5G 极简摩纹保护壳</div>
+            <div class="collocation-tu9-zi2">裸机般顺滑手感，轻薄无负担</div>
+            <span>49元</span>
+        </div>
+        <div class="collocation-xia-box">
+            <div class="collocation-xia-tu10">
+                <img src="images/collocation-10.jpg" alt="">
+                <div class="collocation-tu10-zi1">小米9 SE 街头</div>
+                <div class="collocation-tu10-zi2">风保护壳</div>
+                <div class="collocation-tu10-zi3">49元</div>
+            </div>
+            <div class="collocation-xia-tu11">
+                <div class="collocation-tu11-box">
+                    <i class="iconfont icon-icon-right"></i>
+                </div>
+                <div class="collocation-tu11-zi1">浏览更多</div>
+                <div class="collocation-tu11-zi2">热门</div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 配件结束 -->
+<div class="body-Intelligence-xia"></div>
+<!-- 配件下面图开始 -->
+<div class="img-Intelligence-xia">
+    <div class="img-Intelligence-box">
+        <img src="images/collocation-kong-xia.jpg" alt="">
+    </div>
+</div>
+<!-- 配件下面图结束 -->
+<div class="box"></div>
+<!-- 头部周边开始 -->
+<div class="head-periphery">
+    <div class="head-periphery-content">
+        <div class="periphery-box-zi2">出行</div>
+        <div class="periphery-box-zi1">热门</div>
+        <div class="periphery-box-zi3">周边</div>
+    </div>
+</div>
+<!-- 头部周边结束 -->
+<!-- 周边开始 -->
+<div class="periphery-xia">
+    <div class="periphery-xia-content">
+        <div class="periphery-xia-tu1">
+            <img src="images/periphery-1.jpg" alt="">
+        </div>
+        <div class="periphery-xia-tu2">
+            <img src="images/periphery-2.jpg" alt="">
+            <div class="periphery-tu2-zi1">米家飞行员太阳镜 Pro</div>
+            <div class="periphery-tu2-zi2">尼龙偏光，轻巧佩戴</div>
+            <span>199元</span>
+        </div>
+        <div class="periphery-xia-tu3">
+            <img src="images/periphery-3.jpg" alt="">
+            <div class="periphery-tu3-zi1">小米巨能写中性笔10支装</div>
+            <div class="periphery-tu3-zi2">一支顶4支，超长顺滑书写</div>
+            <span>9.99元起</span>
+        </div>
+        <div class="periphery-xia-tu4">
+            <img src="images/periphery-14.jpg" alt="">
+            <div class="periphery-tu4-zi1">小米旅行箱 20英寸 布朗熊限量版</div>
+            <div class="periphery-tu4-zi2">"国际巨星"LINE FRIENDS布朗熊</div>
+            <span>349元</span>
+            <del>399元</del>
+        </div>
+        <div class="periphery-xia-tu5">
+            <img src="images/periphery-5.jpg" alt="">
+            <div class="periphery-tu5-zi1">米家迷你保温杯</div>
+            <div class="periphery-tu5-zi2">可以随身携带的温度</div>
+            <span>49元</span>
+        </div>
+        <div class="periphery-xia-tu6">
+            <img src="images/periphery-6.jpg" alt="">
+        </div>
+        <div class="periphery-xia-tu7">
+            <img src="images/parts-7.jpg" alt="">
+            <div class="periphery-tu7-zi1">米家驱蚊器基础班 3个装</div>
+            <div class="periphery-tu7-zi2">3个装 长效驱蚊</div>
+            <span>129元</span>
+        </div>
+        <div class="periphery-xia-tu8">
+            <img src="images/periphery-8.jpg" alt="">
+            <div class="periphery-tu8-zi1">3卷装抽绳式垃圾袋</div>
+            <div class="periphery-tu8-zi2">让清洁更简单</div>
+            <span>9.9元起</span>
+            <del>19.9元</del>
+        </div>
+        <div class="periphery-xia-tu9">
+            <img src="images/periphery-9.jpg" alt="">
+            <div class="periphery-tu9-zi1">贝医生巴氏牙刷 四色装</div>
+            <div class="periphery-tu9-zi2">进口刷毛，好品质</div>
+            <span>39.9元</span>
+        </div>
+        <div class="periphery-xia-box">
+            <div class="periphery-xia-tu10">
+                <img src="images/eriphery-10.jpg" alt="">
+                <div class="periphery-tu10-zi1">8H 乳胶弹簧静</div>
+                <div class="periphery-tu10-zi2">音床垫M3</div>
+                <div class="periphery-tu10-zi3">1599元起</div>
+            </div>
+            <div class="periphery-xia-tu11">
+                <div class="periphery-tu11-box">
+                    <i class="iconfont icon-icon-right"></i>
+                </div>
+                <div class="periphery-tu11-zi1">浏览更多</div>
+                <div class="periphery-tu11-zi2">热门</div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 周边结束 -->
+<div class="body-Intelligence-xia"></div>
+<!-- 周边下面图开始 -->
+<div class="img-Intelligence-xia">
+    <div class="img-Intelligence-box">
+        <img src="images/periphery-xia-kong.jpg" alt="">
+    </div>
+</div>
+<!-- 周边下面图结束 -->
+<div class="box"></div>
+<!-- 视频头部开始 -->
+<div class="phone">
+    <div class="phone-content">
+        <div class="phone-content-zi">视频</div>
+        <div class="phone-content-yiru">
+            <span>查看全部</span>
+            <i class="iconfont icon-right"></i>
+        </div>
+    </div>
+</div>
+<!-- 视频头部结束 -->
+<!-- 视频开始 -->
+<div class="video">
+    <div class="video-content">
+        <div class="content-box1">
+            <div class="video-box1">
+                <img src="images/video-1.jpg" alt="">
+                <div class="video-box1-tu"></div>
+                <i class="iconfont icon-bofang1"></i>
+                <div class="video-box-zi">小米MIX Alpha开箱视频</div>
+            </div>
+        </div>
+        <div class="content-box2">
+            <div class="video-box2">
+                <img src="images/video-2.jpg" alt="">
+                <div class="video-box2-tu"></div>
+                <i class="iconfont icon-bofang1"></i>
+                <div class="video-box-zi">小米5G新品手机发布会</div>
+            </div>
+        </div>
+        <div class="content-box3">
+            <div class="video-box3">
+                <img src="images/video-3.jpg" alt="">
+                <div class="video-box3-tu"></div>
+                <i class="iconfont icon-bofang1"></i>
+                <div class="video-box-zi">Redmi Note 8系列发布会</div>
+            </div>
+        </div>
+        <div class="content-box4">
+            <div class="video-box4">
+                <img src="images/video-4.jpg" alt="">
+                <div class="video-box4-tu"></div>
+                <i class="iconfont icon-bofang1"></i>
+                <div class="video-box-zi">小米电视5 创新背后的故事</div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 视频结束 -->
+<!-- 视频下五点开始 -->
+<div class="Repair">
+    <div class="Repair-content">
+        <div class="Repair-box1">
+            <i class="iconfont icon-weixiu"></i>
+            <span>预约维修服务</span>
+        </div>
+        <span class="span">|</span>
+        <div class="Repair-box2">
+            <i class="iconfont icon-qitiantuihuan"></i>
+            <span>7天无理由退货</span>
+        </div>
+        <span class="span">|</span>
+        <div class="Repair-box3">
+            <i class="iconfont icon-tianwuliyoutuihuo"></i>
+            <span>15天免费换货</span>
+        </div>
+        <span class="span">|</span>
+        <div class="Repair-box4">
+            <i class="iconfont icon-liwu"></i>
+            <span>满150元包邮</span>
+        </div>
+        <span class="span">|</span>
+        <div class="Repair-box5">
+            <i class="iconfont icon-dizhi"></i>
+            <span>520余家售后网点</span>
+        </div>
+    </div>
+</div>
+<!-- 视频下五点开始 -->
+<!-- 维修服务下面开始 -->
+<div class="help">
+    <div class="help-content">
+        <div class="help-box1">
+            <div class="help-box1-zi1">帮助中心</div>
+            <div class="help-box1-zi2">账户管理</div>
+            <div class="help-box1-zi3">购物指南</div>
+            <div class="help-box1-zi4">订单操作</div>
+        </div>
+        <div class="help-box2">
+            <div class="help-box1-zi1">服务支持</div>
+            <div class="help-box1-zi2">售后政策</div>
+            <div class="help-box1-zi3">自助服务</div>
+            <div class="help-box1-zi4">相关下载</div>
+        </div>
+        <div class="help-box3">
+            <div class="help-box1-zi1">线下门店</div>
+            <div class="help-box1-zi2">小米之家</div>
+            <div class="help-box1-zi3">服务网点</div>
+            <div class="help-box1-zi4">授权体验店</div>
+        </div>
+        <div class="help-box4">
+            <div class="help-box1-zi1">关于小米</div>
+            <div class="help-box1-zi2">了解小米</div>
+            <div class="help-box1-zi3">加入小米</div>
+            <div class="help-box1-zi4">投资者关系</div>
+        </div>
+        <div class="help-box5">
+            <div class="help-box1-zi1">关注我们</div>
+            <div class="help-box1-zi2">新浪微博</div>
+            <div class="help-box1-zi3">官方微信</div>
+            <div class="help-box1-zi4">联系我们</div>
+        </div>
+        <div class="help-box6">
+            <div class="help-box1-zi1">特色服务</div>
+            <div class="help-box1-zi2">F码通道</div>
+            <div class="help-box1-zi3">礼物码</div>
+            <div class="help-box1-zi4">防伪查询</div>
+        </div>
+        <div class="help-box7">
+            <p>400-1100-5678</p>
+            <div class="help-box7-zi1">周一至周日 8:00-18:00</div>
+            <div class="help-box7-zi2">(仅收市话费)</div>
+            <div class="help-box7-kuang">
+                <i class="iconfont icon-icon"></i>
+                <div>人工客服</div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 维修服务下面结束 -->
+<!-- 尾页开始 -->
+<div class="box-10"></div>
+<div class="page">
+    <div class="page-content">
+        <div class="page-logo">
+            <img src="images/logo.jpg" alt="">
+        </div>
+        <div class="page-nav">
+            <a href="#">小米商城</a>
+            <span>|</span>
+            <a href="#">MIUI</a>
+            <span>|</span>
+            <a href="#">米家</a>
+            <span>|</span>
+            <a href="#">米聊</a>
+            <span>|</span>
+            <a href="#">多看</a>
+            <span>|</span>
+            <a href="#">游戏</a>
+            <span>|</span>
+            <a href="#">音乐</a>
+            <span>|</span>
+            <a href="#">路由器</a>
+            <span>|</span>
+            <a href="#">米粉卡</a>
+            <span>|</span>
+            <a href="#">政企服务</a>
+            <span>|</span>
+            <a href="#">小米天猫店</a>
+            <span>|</span>
+            <a href="#">小米集团隐私政策</a>
+            <span>|</span>
+            <a href="#">小米公司儿童信息保护规则</a>
+            <span>|</span>
+            <a href="#">小米商城隐私政策</a>
+            <span>|</span>
+            <a href="#">小米商城用户协议</a>
+            <span>|</span>
+            <a href="#">问题反馈</a>
+            <span>|</span>
+            <a href="#">廉正举报</a>
+            <span>|</span>
+            <a href="#">诚信合规</a>
+            <a href="#">Select Location</a>
+        </div>
+        <div class="page-nav-xia">
+            @<a href="#">mi.com</a>
+            <span>京ICP证11057号</span>
+            <a href="#">京ICP备10046444号</a>
+            <a href="#">京公网安备1101802020134号</a>
+            <a href="#">京网文[2017]1530-131号</a>
+            <br>
+            <a href="#">(京)网械平台备字(2018)第000005号</a>
+            <a href="#">互联网药品信息服务员资格证(京)-非经营性-2014-0090</a>
+            <a href="#">营业执照 医疗器械质量公告</a>
+            <br>
+            <a href="#">增值电信业务许可证</a>
+            <span>网络食品经营备案(京)</span>
+            <span>【2018】WLSPJYBAHF-12</span>
+            <a href="#">食品经营许可证</a>
+            <br>
+            <span>违法和不良信息举报电话: 185-0130-1238</span>
+            <a href="#">知识产权侵权投诉</a>
+            <span>本网站所列数据,除特殊说明，所有数据均出自我司实验室测试</span>
+        </div>
+    </div>
+</div>
+<div class="dixia">
+    <div class="dixia-content">
+        <div class="dixia-tu1">
+            <img src="images/dixia-1.png" alt="">
+        </div>
+        <div class="dixia-tu2">
+            <img src="images/dixia-2.png" alt="">
+        </div>
+        <div class="dixia-tu3">
+            <img src="images/dixia-3.png" alt="">
+        </div>
+        <div class="dixia-tu4">
+            <img src="images/dixia-5.png" alt="">
+        </div>
+    </div>
+</div>
+<div class="zui-dixia">
+    <div class="zui-dixia-content">探索黑科技，小米为发烧而生！</div>
+</div>
+<!-- 尾页结束 -->
+<!-- 侧导航开始 -->
+<div class="ce-nav">
+    <div class="ce-nav-phone">
+        <i class="iconfont icon-shouji"></i>
+        <div>手机APP</div>
+    </div>
+    <div class="ce-nav-geren">
+        <i class="iconfont icon-ren"></i>
+        <div>个人中心</div>
+    </div>
+    <div class="ce-nav-shouhou">
+        <i class="iconfont icon-weixiu1"></i>
+        <div>售后服务</div>
+    </div>
+    <div class="ce-nav-rengong">
+        <i class="iconfont icon-rengong"></i>
+        <div>人工客服</div>
+    </div>
+    <div class="ce-nav-shop">
+        <i class="iconfont icon-gouwuche"></i>
+        <div>购物车</div>
+    </div>
+</div>
+<!-- 测导航结束 -->
+<!-- 置顶开始 -->
+<a href="#">
+    <div class="zhiding">
+        <i class="iconfont icon-zhiding"></i>
+        <div>回顶部</div>
+    </div>
+</a>
+<!-- 置顶结束 -->
+</body>
+</html>
